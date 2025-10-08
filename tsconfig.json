@@ -1,0 +1,50 @@
+{
+  // ℹ️ TypeScript Configuration for Node.js + Express + Prisma Backend
+  // ---------------------------------------------------------------
+  // This configuration is optimized for a clean TypeScript workflow:
+  // - Uses modern ESNext features
+  // - Targets Node.js runtime
+  // - Outputs compiled JS to the /dist folder
+  // - Enforces type safety
+  // - Compatible with ts-node-dev and Prisma
+
+  "compilerOptions": {
+    /* ========== File Layout ========== */
+    "rootDir": "./src",        // Folder containing your TypeScript source code
+    "outDir": "./dist",        // Folder for compiled JavaScript output
+
+    /* ========== Language & Module System ========== */
+    "target": "ES2021",        // Modern JavaScript output (Node 16+)
+    "module": "CommonJS",      // Node uses CommonJS by default
+    "moduleResolution": "node",// Resolve Node-style imports
+    "esModuleInterop": true,   // Allows default imports from CommonJS modules (e.g., express)
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true, // Enables importing .json files
+    "lib": ["ES2021"],         // Include modern JavaScript features
+
+    /* ========== Type Definitions ========== */
+    "types": ["node"],         // Include Node.js types
+    "skipLibCheck": true,      // Skip type checking in dependencies
+
+    /* ========== Output Settings ========== */
+    "sourceMap": true,         // Generate .map files for debugging
+    "declaration": false,      // Disable .d.ts file generation for now
+    "declarationMap": false,   // Disable declaration map files
+
+    /* ========== Type Checking Rules ========== */
+    "strict": true,                     // Enable all strict type-checking
+    "noUncheckedIndexedAccess": true,   // Safer property access
+    "exactOptionalPropertyTypes": true, // Optional types must be exact
+
+    /* ========== Module Syntax Handling ========== */
+    "isolatedModules": true,            // Each file is treated as a module
+    "forceConsistentCasingInFileNames": true, // Avoid case-sensitive import issues
+
+    /* ========== Experimental / Misc Options ========== */
+    "noEmitOnError": true,              // Don’t emit JS if there are type errors
+    "incremental": true,                // Faster rebuilds
+    "skipDefaultLibCheck": true         // Speeds up compilation
+  },
+  "include": ["src/**/*"],              // Include all TS files in src/
+  "exclude": ["node_modules", "dist"]   // Ignore build output and dependencies
+}
